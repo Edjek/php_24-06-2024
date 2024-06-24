@@ -490,7 +490,7 @@
     echo '<br>';
 
     // declarez une variable description (extrait)
-    // extraire 100 premier caractere suivi ...
+    // extraire 100 premier caractere suivi de ...
     $description = "Indiana Jones reçoit la visite surprise de sa filleule Helena Shaw, qui est à la recherche d'un artefact rare que son père a confié à Indiana par le passé : le fameux cadran d'Archimède, une relique qui aurait le pouvoir de localiser les fissures temporelles.";
     $newdesc = substr($description, 0, 120);
     echo $newdesc . '... <br>';
