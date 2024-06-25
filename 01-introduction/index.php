@@ -425,7 +425,7 @@
 
 
     // ---------------------------------
-    echo '<h3>la boucle foreach()</h3>';
+    echo '<h3>Boucle foreach()</h3>';
     // ---------------------------------
     foreach ($animals as $animal) {
         echo $animal . '<br>';
