@@ -549,16 +549,16 @@
     echo '<h3>$_GET[]</h3>';
     /* --------------------------------- */
 
-    // $_GET :
-    var_dump($_GET); // $_GET : Contient les informations envoyées en paramètre dans l'URL
+    // $_GET est une superglobale qui permet de récupérer des informations envoyées en paramètre dans l'URL
+    var_dump($_GET);
 
 
     /* --------------------------------- */
     echo '<h3>$_POST[]</h3>';
     /* --------------------------------- */
 
-    // $_POST
-    var_dump($_POST); // $_POST : Contient des informations envoyées en paramètre dans le corps de la requête HTTP
+    // $_POST est une superglobale qui permet de récupérer des informations envoyées en paramètre dans le corps de la requête HTTP
+    var_dump($_POST);
 
 
     /* --------------------------------- */
