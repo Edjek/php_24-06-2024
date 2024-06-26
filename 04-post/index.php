@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -8,8 +11,15 @@
 </head>
 
 <body>
+    <?php
+    if(isset($_SESSION['message'])){
+    ?>
+    <p><?= $_SESSION['message']; ?></p>
+    <?php
+    }
+    ?>
     <div>
-        <form action="./traitement.php" method="POST">
+        <form action="./src/traitement.php" method="POST">
             <div>
                 <label for="name">nom</label>
                 <input type="text" id="name" name="name">
