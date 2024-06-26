@@ -196,12 +196,7 @@
     echo '<h3>Les tableaux associatifs</h3>';
     /* --------------------------------- */
 
-    $user = [
-        'prenom' => 'Rachid',
-        'nom' => 'EDJEKOUANE',
-        'age' => 40,
-        'telephone' => '06 56 87 45 36'
-    ];
+    $user = ['prenom' => 'Rachid', 'nom' => 'EDJEKOUANE', 'age' => 40, 'telephone' => '06 56 87 45 36'];
 
     // Bonjour je m'appelle rachid edjekouane, j'ai 40 ans et mon numéro de téléphone est le  : 06 56 87 45 36
     echo 'Bonjour, je m\'appelle ' . $user['prenom'] . ' ' . $user['nom'] . ', j\'ai ' . $user['age'] . ' ans et mon numéro de téléphone est le : ' . $user['telephone'];
@@ -367,15 +362,15 @@
     <select name="" id="">
         <?php
         $i = 1920;
-    while ($i <= 2020) {
+        while ($i <= 2020) {
         ?>
-        <option value="<?php echo $i; ?>">
-            <?= $i; ?>
-        </option>
+            <option value="<?php echo $i; ?>">
+                <?= $i; ?>
+            </option>
         <?php
             $i++;
-    }
-    ?>
+        }
+        ?>
     </select>
 
     <?php
@@ -396,19 +391,19 @@
 
             echo "<option value=\"$i\">$i</option>";
         }
-    ?>
+        ?>
     </select>
 
     <select name="" id="">
         <?php
-    for ($i = 1920; $i <= 2020; $i++) {
+        for ($i = 1920; $i <= 2020; $i++) {
         ?>
-        <option value="<?= $i; ?>">
-            <?= $i; ?>
-        </option>
+            <option value="<?= $i; ?>">
+                <?= $i; ?>
+            </option>
         <?php
-    }
-    ?>
+        }
+        ?>
     </select>
     <?php
 
@@ -428,6 +423,7 @@
     }
 
     $voiture = ['couleur' => 'jaune', 'modele' => 'bmw', 'annee' => 2018];
+
     foreach ($voiture as $key => $prop) {
         echo $key . ' : ' . $prop . '<br>';
     }
