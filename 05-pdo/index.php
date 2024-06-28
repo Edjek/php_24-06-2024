@@ -26,20 +26,19 @@ $books = getAllBooks($pdo);
     <main>
         <h2>Liste des livres disponibles :</h2>
         <div class="book-list">
-            <?php foreach ($books as $book): ?>
-            <div class="book-card">
-                <div class="book-content">
-                    <h3><?php echo htmlspecialchars($book['nom']); ?>
-                    </h3>
-                    <p><?php echo htmlspecialchars($book['description']); ?>
-                    </p>
-                    <p><strong>Année de parution :</strong>
-                        <?php echo htmlspecialchars($book['annee_parution']); ?>
-                    </p>
-                    <a class="details-link"
-                        href="./view/book-details.php?id=<?= $book['id'] ?>">Détails</a>
+            <?php foreach ($books as $book) : ?>
+                <div class="book-card">
+                    <div class="book-content">
+                        <h3><?php echo htmlspecialchars($book['nom']); ?>
+                        </h3>
+                        <p><?php echo htmlspecialchars($book['description']); ?>
+                        </p>
+                        <p><strong>Année de parution :</strong>
+                            <?php echo htmlspecialchars($book['annee_parution']); ?>
+                        </p>
+                        <a class="details-link" href="./view/book-details.php?id=<?= $book['id'] ?>">Détails</a>
+                    </div>
                 </div>
-            </div>
             <?php endforeach; ?>
         </div>
     </main>

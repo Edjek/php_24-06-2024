@@ -25,41 +25,35 @@ $bookDetails = getBookDetailsById($pdo, $_GET['id']);
 
     <main>
         <h2>Détails du Livre</h2>
-        <?php if ($bookDetails): ?>
-        <div class="book-details">
-            <div class="detail-item">
-                <span class="label"><strong>Titre :</strong></span>
-                <span
-                    class="value"><?php echo htmlspecialchars($bookDetails['nom']); ?></span>
+        <?php if ($bookDetails) : ?>
+            <div class="book-details">
+                <div class="detail-item">
+                    <span class="label"><strong>Titre :</strong></span>
+                    <span class="value"><?php echo htmlspecialchars($bookDetails['nom']); ?></span>
+                </div>
+                <div class="detail-item">
+                    <span class="label"><strong>Description :</strong></span>
+                    <span class="value"><?php echo htmlspecialchars($bookDetails['description']); ?></span>
+                </div>
+                <div class="detail-item">
+                    <span class="label"><strong>Année de parution :</strong></span>
+                    <span class="value"><?php echo htmlspecialchars($bookDetails['annee_parution']); ?></span>
+                </div>
+                <div class="detail-item">
+                    <span class="label"><strong>Auteur :</strong></span>
+                    <span class="value"><?php echo htmlspecialchars($bookDetails['prenom'] . ' ' . $bookDetails['nom']); ?></span>
+                </div>
+                <div class="detail-item">
+                    <span class="label"><strong>Date de naissance :</strong></span>
+                    <span class="value"><?php echo htmlspecialchars($bookDetails['date_naissance']); ?></span>
+                </div>
+                <div class="detail-item">
+                    <span class="label"><strong>Pays d'origine :</strong></span>
+                    <span class="value"><?php echo htmlspecialchars($bookDetails['pays_origine']); ?></span>
+                </div>
             </div>
-            <div class="detail-item">
-                <span class="label"><strong>Description :</strong></span>
-                <span
-                    class="value"><?php echo htmlspecialchars($bookDetails['description']); ?></span>
-            </div>
-            <div class="detail-item">
-                <span class="label"><strong>Année de parution :</strong></span>
-                <span
-                    class="value"><?php echo htmlspecialchars($bookDetails['annee_parution']); ?></span>
-            </div>
-            <div class="detail-item">
-                <span class="label"><strong>Auteur :</strong></span>
-                <span
-                    class="value"><?php echo htmlspecialchars($bookDetails['prenom'] . ' ' . $bookDetails['nom']); ?></span>
-            </div>
-            <div class="detail-item">
-                <span class="label"><strong>Date de naissance :</strong></span>
-                <span
-                    class="value"><?php echo htmlspecialchars($bookDetails['date_naissance']); ?></span>
-            </div>
-            <div class="detail-item">
-                <span class="label"><strong>Pays d'origine :</strong></span>
-                <span
-                    class="value"><?php echo htmlspecialchars($bookDetails['pays_origine']); ?></span>
-            </div>
-        </div>
-        <?php else: ?>
-        <p>Aucun livre trouvé avec l'ID donné.</p>
+        <?php else : ?>
+            <p>Aucun livre trouvé avec l'ID donné.</p>
         <?php endif; ?>
     </main>
 

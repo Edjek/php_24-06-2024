@@ -5,6 +5,7 @@ function getAllBooks($pdo)
     $stmt = $pdo->query('SELECT * FROM book');
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
+
 function getBookDetailsById($pdo, $bookId)
 {
     $stmt = $pdo->prepare(
