@@ -632,7 +632,7 @@
 
     class Hero
     {
-        public $pseudo = 'Tintin'; // Propriété "pseudo"
+        public $pseudo; // Propriété "pseudo"
         private $vie = 100; // Propriété "vie"
 
         public function regenerer() // Méthode "regenerer"
@@ -642,9 +642,11 @@
     }
 
     $hero = new Hero();
+    $hero->pseudo = 'Tintin';
+    $hero->regenerer();
 
     echo $hero->pseudo;
-    // echo $hero->vie;
+    // echo $hero->vie; La propriété est privée je ne peux pas y acceder en dehors de la class
 
     // $hero2 est un objet de la classe "Hero". C'est une instance de la classe "Hero".
     $hero2 = new Hero();
