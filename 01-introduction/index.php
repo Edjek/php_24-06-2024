@@ -366,15 +366,15 @@
     <select name="" id="">
         <?php
         $i = 1920;
-        while ($i <= 2020) {
+    while ($i <= 2020) {
         ?>
-            <option value="<?php echo $i; ?>">
-                <?= $i; ?>
-            </option>
+        <option value="<?php echo $i; ?>">
+            <?= $i; ?>
+        </option>
         <?php
             $i++;
-        }
-        ?>
+    }
+    ?>
     </select>
 
     <?php
@@ -395,19 +395,19 @@
 
             echo "<option value=\"$i\">$i</option>";
         }
-        ?>
+    ?>
     </select>
 
     <select name="" id="">
         <?php
-        for ($i = 1920; $i <= 2020; $i++) {
+    for ($i = 1920; $i <= 2020; $i++) {
         ?>
-            <option value="<?= $i; ?>">
-                <?= $i; ?>
-            </option>
+        <option value="<?= $i; ?>">
+            <?= $i; ?>
+        </option>
         <?php
-        }
-        ?>
+    }
+    ?>
     </select>
     <?php
 
@@ -642,14 +642,15 @@
     }
 
     $hero = new Hero();
-    $hero->pseudo = 'Tintin';
-    $hero->regenerer();
+    $hero->pseudo = 'Batman';
 
     echo $hero->pseudo;
-    // echo $hero->vie; La propriété est privée je ne peux pas y acceder en dehors de la class
+    // echo $hero->vie; // Erreur : la propriété est privée
+    $hero->regenerer();
 
     // $hero2 est un objet de la classe "Hero". C'est une instance de la classe "Hero".
     $hero2 = new Hero();
+    $hero->pseudo = 'Superman';
 
     ?>
 
