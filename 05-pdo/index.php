@@ -29,7 +29,7 @@ $books = getAllBooks($pdo);
             <?php foreach ($books as $book): ?>
             <div class="book-card">
                 <div class="book-content">
-                    <h3><?php echo htmlspecialchars($book['titre']); ?>
+                    <h3><?php echo htmlspecialchars($book['nom']); ?>
                     </h3>
                     <p><?php echo htmlspecialchars($book['description']); ?>
                     </p>

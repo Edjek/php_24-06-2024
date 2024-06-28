@@ -30,7 +30,7 @@ $bookDetails = getBookDetailsById($pdo, $_GET['id']);
             <div class="detail-item">
                 <span class="label"><strong>Titre :</strong></span>
                 <span
-                    class="value"><?php echo htmlspecialchars($bookDetails['titre']); ?></span>
+                    class="value"><?php echo htmlspecialchars($bookDetails['nom']); ?></span>
             </div>
             <div class="detail-item">
                 <span class="label"><strong>Description :</strong></span>
