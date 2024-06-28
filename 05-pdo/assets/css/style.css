@@ -139,3 +139,61 @@ footer {
 }
 
 /* ADD-BOOK.PHP */
+.form-container {
+  background-color: #fff;
+  padding: var(--padding);
+  border-radius: var(--border-radius);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  font-family: var(--font-family);
+  font-size: 1em;
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+  border-color: var(--accent-color);
+  outline: none;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-submit {
+  background-color: var(--accent-color);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.form-submit:hover {
+  background-color: #2980b9;
+}

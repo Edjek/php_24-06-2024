@@ -1,12 +1,14 @@
-<?php
++<?php
 
-require_once '../src/config/db.php';
-require_once '../src/repository/authorRepository.php';
+    require_once '../src/config/db.php';
+    require_once '../src/repository/authorRepository.php';
 
-$pdo = connectDB();
-$authors = getAllAuthors($pdo);
+    $pdo = connectDB();
+    $authors = getAllAuthors($pdo);
 
-?>
+    session_start();
+
+    ?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -23,32 +25,39 @@ $authors = getAllAuthors($pdo);
     </header>
 
     <main>
-        <form action="">
-            <div>
-                <label for="">titre</label>
-                <input type="text">
+        <form action="../src/form/add_book.php" method="post">
+            <div class="form-group">
+                <label for="title" class="form-label">Titre</label>
+                <input type="text" name="title" id="title" class="form-input" >
             </div>
-            <div>
-                <label for="">description</label>
-                <textarea name="" id=""></textarea>
+            <div class="form-group">
+                <label for="description" class="form-label">Description</label>
+                <textarea name="description" id="description" class="form-textarea" required></textarea>
             </div>
-            <div>
-                <label for=""></label>
-                <input type="number" step="1" min="0" max="9999" placeholder="1900">
+            <div class="form-group">
+                <label for="year_parution" class="form-label">Année de parution</label>
+                <input type="number" name="year_parution" id="year_parution" step="1" min="0" max="9999" placeholder="1900" class="form-input" required>
             </div>
-            <div>
-                <label for=""></label>
-                <select name="" id="">
-                <?php foreach($authors as $author) { ?>
-                    <option value="<?= $author['id'] ?>">
-                        <?= "{$author['nom']} {$author['prenom']}" ?>
-                    </option>
-                <?php } ?>
+            <div class="form-group">
+                <label for="id_author" class="form-label">Auteur</label>
+                <select name="id_author" id="id_author" class="form-select">
+                    <?php foreach ($authors as $author) { ?>
+                        <option value="<?= htmlspecialchars($author['id']) ?>">
+                            <?= htmlspecialchars("{$author['nom']} {$author['prenom']}") ?>
+                        </option>
+                    <?php } ?>
 
                 </select>
             </div>
             <!-- CHAMPS DE FORMULAIRE POUR AFFICHER LA LISTE DES AUTEURS -->
-            <input type="submit" value="Ajouter">
+            <input type="submit" value="Ajouter" class="form-submit">
+
+            <?php
+            if(isset($_SESSION['message'])){
+                echo "<p>{$_SESSION['message']}</p>";
+                unset($_SESSION['message']);
+            }
+            ?>
         </form>
     </main>
 
