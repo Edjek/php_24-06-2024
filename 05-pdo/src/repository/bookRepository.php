@@ -24,9 +24,9 @@ function addBook($conn, $title, $description, $year, $idAuteur)
     $stmt = $conn->prepare('INSERT INTO book (nom, description, annee_parution, id_auteur) VALUES (:title, :description, :year, :idAuteur)');
 
     $stmt->bindParam(':title', $title, PDO::PARAM_STR);
-    $stmt->bindParam(':description', $description, PDO::PARAM_STR);
-    $stmt->bindParam(':year', $year, PDO::PARAM_INT);
-    $stmt->bindParam(':idAuteur', $idAuteur, PDO::PARAM_INT);
+    $stmt->bindParam(':description',  $description, PDO::PARAM_STR);
+    $stmt->bindParam(':year',  $year, PDO::PARAM_INT);
+    $stmt->bindParam(':idAuteur',  $idAuteur, PDO::PARAM_INT);
 
-    $stmt->exec();
+    $stmt->execute();
 }
